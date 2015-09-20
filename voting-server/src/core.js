@@ -1,10 +1,38 @@
 import { List, Map } from 'immutable';
 
+/*
+
+Initial:
+state = {
+  entries: ['Trainspotting', '28 Days Later', 'Sunshine']
+}
+getWinners returns [];
+
+state = {
+  pair: ['Trainspotting', '28 Days Later'],
+  entries: ['Sunshine']
+}
+
+getWinners returns ['Trainspotting', '28 Days Later']
+
+state = {
+  pair: ['Trainspotting', '28 Days Later'],
+  tally: {
+    'Trainspotting': 4,
+    '28 Days Later': 2
+  },
+  entries: ['Sunshine']
+}
+
+getWinners returns [Trainspotting]
+
+*/
+
 function getWinners(vote) {
   if (!vote) return [];
   const [a, b] = vote.get('pair');
-  const aVotes = vote.getIn(['tally', a], 0);
-  const bVotes = vote.getIn(['tally', b], 0);
+  const aVotes = vote.getIn(['tally', a], 0); // returns value or 0;
+  const bVotes = vote.getIn(['tally', b], 0); // returns value or 0;
   if      (aVotes > bVotes)  return [a];
   else if (aVotes < bVotes)  return [b];
   else                       return [a, b];
