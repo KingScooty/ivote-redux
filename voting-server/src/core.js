@@ -1,30 +1,34 @@
 import { List, Map } from 'immutable';
 
+// Since our application's logic is in core.js, it makes sense to introduce the
+// initial state there:
+export const INITIAL_STATE = Map();
+
 /*
 
-Initial:
-state = {
-  entries: ['Trainspotting', '28 Days Later', 'Sunshine']
-}
-getWinners returns [];
+  Initial:
+  state = {
+    entries: ['Trainspotting', '28 Days Later', 'Sunshine']
+  }
+  getWinners returns [];
 
-state = {
-  pair: ['Trainspotting', '28 Days Later'],
-  entries: ['Sunshine']
-}
+  state = {
+    pair: ['Trainspotting', '28 Days Later'],
+    entries: ['Sunshine']
+  }
 
-getWinners returns ['Trainspotting', '28 Days Later']
+  getWinners returns ['Trainspotting', '28 Days Later']
 
-state = {
-  pair: ['Trainspotting', '28 Days Later'],
-  tally: {
-    'Trainspotting': 4,
-    '28 Days Later': 2
-  },
-  entries: ['Sunshine']
-}
+  state = {
+    pair: ['Trainspotting', '28 Days Later'],
+    tally: {
+      'Trainspotting': 4,
+      '28 Days Later': 2
+    },
+    entries: ['Sunshine']
+  }
 
-getWinners returns [Trainspotting]
+  getWinners returns [Trainspotting]
 
 */
 
