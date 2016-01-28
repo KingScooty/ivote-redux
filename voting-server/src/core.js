@@ -25,7 +25,8 @@ state = {
   entries: []
 }
 
-updateIn, gotes into vote.tally.trainspotting, created the keys if they don't already exist, and initialises the final key with 0 if it's unset.
+updateIn, gotes into vote.tally.trainspotting, created the keys if they don't
+already exist, and initialises the final key with 0 if it's unset.
 It then runs the function to update the value.
 
 state = {
