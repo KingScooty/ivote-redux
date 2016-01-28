@@ -12,3 +12,30 @@ export function next(state) {
     entries: entries.skip(2)
   })
 }
+
+/*
+state = {
+  vote: {
+    pair: ['Trainspotting', '28 Days Later'],
+    tally: {
+      'Trainspotting': 3,
+      '28 Days Later': 2
+    }
+  },
+  entries: []
+}
+
+updateIn, gotes into vote.tally.trainspotting and initialises it with 0
+if it's unset. It then runs the function to update the value.
+
+Clever!
+
+*/
+
+export function vote(state, entry) {
+  return state.updateIn(
+    ['vote', 'tally', entry],
+    0,
+    tally => tally + 1
+  )
+}
