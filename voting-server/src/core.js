@@ -14,6 +14,10 @@ export function next(state) {
 }
 
 /*
+
+VOTE
+----
+
 state = {
   vote: {
     pair: ['Trainspotting', '28 Days Later']
