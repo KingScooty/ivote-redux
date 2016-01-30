@@ -10,10 +10,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.5.3",
+    "jsdom": "^8.0.1",
+    "mocha": "^2.4.5",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
   },
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "immutable": "^3.7.6"
   }
 }
