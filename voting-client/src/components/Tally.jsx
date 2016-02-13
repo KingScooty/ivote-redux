@@ -1,6 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
+// import {connect} from 'react-redux';
+
 export default React.createClass({
   mixins: [PureRenderMixin],
   getPair: function() {
@@ -25,3 +27,12 @@ export default React.createClass({
     </div>
   }
 });
+
+// function mapStateToProps(state) {
+//   return {
+//     pair: state.getIn(['vote', 'pair']),
+//     tally: state.getIn(['vote', 'tally'])
+//   }
+// }
+//
+// export const TallyContainer = connect(mapStateToProps)(Tally);
