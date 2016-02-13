@@ -9,7 +9,7 @@ export default function startServer(store) {
   // emitted to the client.
 
   store.subscribe(
-    () => io.emit('state', store.getState().toJS());
+    () => io.emit('state', store.getState().toJS())
   );
 
 /*
