@@ -164,4 +164,17 @@ describe('application logic', () => {
 
   });
 
+  it('ignores the vote if for an invalid entry', () => {
+
+    const state = fromJS({
+      pair: ['Trainspotting', '28 Days Later'],
+    });
+
+    const nextState = vote(state, 'Sunshine');
+
+    expect(nextState).to.equal(fromJS({
+      pair: ['Trainspotting', '28 Days Later']
+    }));
+  });
+
 });

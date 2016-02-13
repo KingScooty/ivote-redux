@@ -64,9 +64,13 @@ Clever!
 */
 
 export function vote(voteState, entry) {
-  return voteState.updateIn(
-    ['tally', entry],
-    0,
-    tally => tally + 1
-  )
+  if (voteState.get('pair').includes(entry)) {
+    return voteState.updateIn(
+      ['tally', entry],
+      0,
+      tally => tally + 1
+    );
+  } else {
+    return voteState;
+  }
 }
